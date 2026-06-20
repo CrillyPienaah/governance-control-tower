@@ -113,6 +113,7 @@ All five systems were independently developed and deployed prior to the capstone
 | **Deployability** | Five live systems deployed on Railway + Vercel, orchestration layer demo-ready |
 | **Agent Skills** | Each agent is a narrow specialist: regulatory, compliance, risk, reliability, benchmarking |
 | **Spec-Driven Development** | Governance thresholds defined as specs first; agents serve the rules |
+| **Governance Decision-Making** | Supervisor synthesizes outputs from five specialist agents before deterministic approval or blocking |
 
 ---
 
