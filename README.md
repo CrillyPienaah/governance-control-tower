@@ -99,6 +99,8 @@ All five agents connect to real deployed systems:
 | Reliability Evaluation | [genai-reliability-framework.vercel.app](https://genai-reliability-framework.vercel.app) | Hallucination risk, grounding score, citation coverage |
 | Benchmarking | [github.com/CrillyPienaah/canfraudbench](https://github.com/CrillyPienaah/canfraudbench) | Published Canadian fraud detection fairness benchmark |
 
+All five systems were independently developed and deployed prior to the capstone. The Governance Control Tower serves as the orchestration layer that unifies them into a single enterprise governance workflow.
+
 ---
 
 ## Course Concepts Demonstrated
@@ -221,6 +223,18 @@ From the Day 4 whitepaper: LLMs can be "convinced" to bypass rules via prompt in
 
 ### Why Five Separate Live Systems?
 The five systems were built independently over six months as part of a Blue Ocean career strategy targeting Canadian financial institutions ahead of OSFI E-23 enforcement. The capstone orchestration layer is the natural culmination — unifying them into a single governance pipeline rather than five isolated tools.
+
+---
+
+## Business Impact
+
+Traditional model monitoring systems answer: *"Is the model accurate?"*
+
+The Governance Control Tower answers: *"Should the model be deployed?"*
+
+By combining regulatory intelligence, compliance assessment, model risk monitoring, reliability evaluation, and benchmarking into a single multi-agent pipeline, the system provides a governance decision rather than a metric dashboard.
+
+This approach helps organizations identify fairness failures, drift risks, reliability concerns, and documentation gaps before they become regulatory findings or operational incidents. The difference between a model that *performs well* and a model that is *safe to deploy* is the gap this project addresses.
 
 ---
 
