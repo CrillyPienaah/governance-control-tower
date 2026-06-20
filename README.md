@@ -9,6 +9,12 @@
 
 ---
 
+## Architecture
+
+![Enterprise AI Governance Control Tower](assets/governance_control_tower_architecture.png)
+
+---
+
 ## The Problem
 
 Canadian financial institutions face an inflection point. OSFI Guideline E-23 establishes model risk management expectations for federally regulated institutions — and most banks are still operationalizing what this means in practice.
