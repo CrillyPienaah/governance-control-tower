@@ -13,6 +13,26 @@
 
 ![Enterprise AI Governance Control Tower](assets/governance_control_tower_architecture.png)
 
+*Figure 1. ADK-style multi-agent governance architecture coordinating five specialized governance services through a centralized supervisor.*
+
+---
+
+## Why Agents?
+
+Traditional monitoring systems evaluate metrics. The Governance Control Tower evaluates **decisions**.
+
+A single monolithic agent told to "evaluate this model for governance" will hallucinate, miss edge cases, and produce inconsistent outputs. By decomposing governance evaluation into five specialists — each with a narrow, well-defined responsibility — the system achieves separation of concerns, deterministic guardrails, and full auditability.
+
+Each specialist agent owns one governance domain:
+
+- **Regulatory Intelligence Agent** — interprets applicable regulatory sections
+- **Compliance Assessment Agent** — identifies documentation and process gaps
+- **Model Risk Agent** — evaluates drift, fairness, and performance metrics
+- **Reliability Evaluation Agent** — assesses hallucination risk and grounding quality
+- **Benchmarking Agent** — compares model behavior against published standards
+
+The Supervisor synthesizes these perspectives before a final governance determination is made. No single agent can approve or block a model — the determination requires all five inputs plus the deterministic guardrail engine.
+
 ---
 
 ## The Problem
@@ -118,8 +138,8 @@ Rules are evaluated in Python code — not in prompts. No LLM can override them.
 
 ```python
 GOVERNANCE_THRESHOLDS = {
-    "air_min": 0.80,        # Fairness — 4/5ths rule
-    "psi_max": 0.20,        # Drift — significant threshold
+    "air_min": 0.80,        # Fairness — 4/5ths rule (fairness literature)
+    "psi_max": 0.20,        # Drift — significant shift (model risk practice)
     "psi_warning": 0.10,    # Drift — moderate warning
     "hallucination_max": 0.10,
     "auc_min": 0.70,
@@ -127,6 +147,8 @@ GOVERNANCE_THRESHOLDS = {
     "tpr_gap_max": 0.10,
 }
 ```
+
+> Thresholds are enterprise governance values aligned with model risk management best practices and informed by fairness literature. They are not direct numeric mandates from OSFI E-23.
 
 From the Day 5 whitepaper: *"Hard-coding constraints into a system prompt is brittle. To build production-grade platforms, external, tamper-proof governance is required."*
 
